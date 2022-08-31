@@ -10,6 +10,7 @@ name: Java CI/CD Pipeline Example
 on: [push]
 jobs:
   build:
+  workflow_dispatch:
 #
 # This workflow uses an Ubuntu Linux Virtual Machine (the "runner") to perform the workflow steps
 #
