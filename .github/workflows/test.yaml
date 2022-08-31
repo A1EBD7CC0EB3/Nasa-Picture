@@ -1,0 +1,19 @@
+name: Java without setup
+
+on: 
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: beefcake
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Run Unit Tests
+      run: ./gradlew test
+
+    - name: Stage Test Reults
+      run: cp build/test-results/test/*.xml test-reports
